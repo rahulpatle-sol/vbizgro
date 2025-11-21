@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import CanvasWaveLayer from './wave';
+import ThreeDSlider from '../Components/ThreeDslider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,7 @@ const HeroSection = () => {
 
   return (
     <section ref={heroRef} className="relative w-full h-screen bg-[#0f172a font-[EXO] overflow-hidden">
-      {/* Optional: Thread or Orb Background */}
+ 
       <CanvasWaveLayer /> 
 
       {/* Hero Content */}

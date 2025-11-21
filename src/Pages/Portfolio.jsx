@@ -14,14 +14,30 @@ const portfolioItems = [
 
 export default function PortfolioPage() {
   return (
-    <section className="relative w-full py-28 bg-[#fcfcfd] text-[#0f172a] font-[EXO] overflow-hidden">
-      {/* Ambient gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-indigo-50 to-purple-50 pointer-events-none" />
+    <section className="relative w-full min-h-screen bg-[#fcfcfd] text-[#0f172a] font-[EXO] overflow-hidden my-48">
+      {/* Abstract PNG background */}
+      <div className="absolute inset-0 bg-[url('/images/bg-layer.png')] bg-cover bg-center opacity-10 pointer-events-none" />
+
+      {/* Central circular gradient + radial points */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
+        <div className="w-[480px] h-[480px] rounded-full bg-gradient-to-br from-purple-300 via-pink-200 to-indigo-200 opacity-40 blur-2xl" />
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-[2px] h-[160px] bg-black/10 origin-bottom"
+            style={{
+              transform: `rotate(${i * 30}deg) translateY(-80px)`,
+            }}
+          >
+            <div className="w-2 h-2 rounded-full bg-black absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-pulse" />
+          </div>
+        ))}
+      </div>
 
       {/* Heading */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mb-20">
         <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-          Our <span className="text-indigo-600">Portfolio</span>
+          YOUR <span className="text-indigo-600">FAVOURITE</span> DESIGNER
         </h2>
         <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
           A showcase of campaigns, designs, and strategies we’ve built in social media marketing.
@@ -38,7 +54,8 @@ export default function PortfolioPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="group rounded-2xl overflow-hidden shadow-[0_12px_32px_rgba(15,23,42,0.08)] backdrop-blur-md border border-white/60 bg-white transition-transform duration-300 hover:scale-[1.02]"
+            className={`group rounded-2xl overflow-hidden shadow-[0_12px_32px_rgba(15,23,42,0.08)] backdrop-blur-md border border-white/60 bg-white transition-transform duration-300 hover:scale-[1.02]
+              ${i % 2 === 0 ? "rotate-[-3deg]" : "rotate-[3deg]"} hover:rotate-0`}
           >
             <div className="h-64 w-full overflow-hidden relative">
               <img
@@ -53,6 +70,20 @@ export default function PortfolioPage() {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* Footer Info */}
+      <div className="absolute bottom-6 left-6 text-xs text-slate-500 font-medium">
+        PORTFOLIO
+      </div>
+      <div className="absolute bottom-6 right-6 text-xs text-slate-500 font-medium">
+        © 2025
+      </div>
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-slate-500 font-medium">
+        designwithrahul@gmail.com
+      </div>
+      <div className="absolute top-6 left-6 text-xs text-slate-500 font-medium">
+        @vbizgro
       </div>
     </section>
   );

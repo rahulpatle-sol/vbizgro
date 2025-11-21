@@ -1,99 +1,96 @@
 import React from "react";
 
-// VBizGro About Component
-// - Uses Tailwind CSS classes for styling (no imports required)
-// - Image currently points to the uploaded local file path. To use an Unsplash image, replace the `imgSrc` value with an Unsplash URL.
-
-const imgSrc = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop"; // local image (provided)
-// Example Unsplash replacement: const imgSrc = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1400&q=80&auto=format&fit=crop";
-
 export default function VBizGroAbout() {
   return (
-    <div className="min-h-screen bg-blue-50 flex items-center justify-center p-8">
-      <div className="w-full max-w-6xl shadow-lg rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
-        {/* Left: Intro block */}
-        <div className="bg-gradient-to-br from-blue-300 to-pink-200 p-12 flex flex-col justify-between">
+    <section className="min-h-screen bg-white flex items-center justify-center mt-64 p-6 lg:p-10">
+      <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+
+        {/* LEFT: BRAND AREA */}
+        <div className="bg-gradient-to-br from-blue-500 to-blue-300 p-12 flex flex-col justify-between text-white">
           <div>
-            <div className="text-4xl lg:text-5xl font-semibold text-white max-w-md leading-snug">
-              Welcome to <span className="font-extrabold">VBizGro</span>.
-              <br />
-              We build brands that people love.
-            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight drop-shadow-sm">
+              Welcome to <span className="font-extrabold">VBizGro</span>
+            </h1>
+            <p className="mt-5 text-white/90 text-lg max-w-md">
+              We build brands, craft stories, and create digital experiences that people remember.
+            </p>
           </div>
 
-          <div className="mt-8">
-            <p className="text-white/90 max-w-md">
-              VBizGro is a full-stack digital & social media marketing agency focused on transforming businesses
-              into future-ready brands. We blend creativity with data to craft campaigns and experiences that don’t
-              just look good — they perform.
-            </p>
-
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="bg-white/20 p-3 rounded">
-                <div className="text-sm font-medium">Services</div>
-                <div className="text-sm">Social, Ads, Branding</div>
+          <div className="mt-10">
+            <div className="grid grid-cols-2 gap-4 max-w-xs">
+              <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="text-sm font-semibold">Services</div>
+                <div className="text-xs">Social | Ads | Branding</div>
               </div>
-              <div className="bg-white/20 p-3 rounded">
-                <div className="text-sm font-medium">Results</div>
-                <div className="text-sm">ROI-focused campaigns</div>
+              <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <div className="text-sm font-semibold">Focus</div>
+                <div className="text-xs">ROI | Growth | Impact</div>
               </div>
             </div>
+
+            <button className="mt-8 px-6 py-3 bg-white text-blue-600 rounded-full font-semibold shadow hover:bg-blue-50 transition">
+              Work With Us
+            </button>
           </div>
         </div>
 
-        {/* Right: Image + About content panel */}
+        {/* RIGHT: IMAGE + ABOUT */}
         <div className="relative bg-white">
-          {/* Right top image */}
-          <div className="h-64 lg:h-full lg:min-h-[480px] w-full overflow-hidden">
+          {/* TOP IMAGE */}
+          <div className="h-64 lg:h-[420px] w-full overflow-hidden relative">
             <img
-              src={imgSrc}
-              alt="VBizGro about"
-              className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop"
+              alt="VBizGro"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
-            {/* Donate floating label mimic (heart) */}
-            <div className="absolute right-4 top-6 bg-white/80 rounded-full p-2 shadow">
-              ♥
+
+            <div className="absolute top-5 right-5 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full text-sm font-medium shadow">
+              ❤️ Trusted by 50+ Brands
             </div>
           </div>
 
-          {/* Bottom content panel */}
+          {/* CONTENT BLOCK */}
           <div className="flex">
-            {/* Vertical pink bar with rotated "About us" */}
-            <div className="w-20 bg-pink-200 flex items-center justify-center">
-              <div className="transform -rotate-90 origin-center text-xl font-bold text-pink-800 tracking-wide">
+            {/* SIDE LABEL */}
+            <div className="w-20 bg-blue-50 flex items-center justify-center">
+              <span className="rotate-[-90deg] text-lg font-semibold tracking-wide text-blue-700">
                 About us
-              </div>
+              </span>
             </div>
 
-            {/* Text content area */}
-            <div className="flex-1 p-10">
-              <div className="text-sm text-gray-500 leading-relaxed">
-                <p className="mb-4">
-                  Since its beginning, <strong>VBizGro</strong> has been on a mission to help brands grow with clarity,
-                  creativity, and smart digital strategy. We’re a full-stack digital & social media marketing agency
-                  dedicated to transforming businesses into powerful, future-ready brands.
-                </p>
+            {/* ABOUT TEXT */}
+            <div className="flex-1 p-10 text-gray-700 leading-relaxed">
+              <p className="mb-4">
+                <strong>VBizGro</strong> is a next-gen digital & social media marketing agency
+                helping brands build a strong online presence with clarity, creativity and data-backed strategies.
+              </p>
 
-                <p className="mb-4">
-                  We help startups, creators, and growing businesses build a standout online presence through strategic
-                  marketing, content creation, branding, ad campaigns, and performance-driven growth solutions.
-                </p>
+              <p className="mb-4">
+                We partner with startups, creators, and organizations to craft digital identities,
+                run high-performing ad campaigns, design premium visuals, build websites, and create
+                storytelling-driven content that actually converts.
+              </p>
 
-                <p className="mb-4">
-                  Our signature services include Social Media Management, Paid Advertising (Meta + Google), Branding &
-                  Creative Design, Website Development, Content Strategy & Production, SEO & Performance Marketing, and
-                  Funnels + Automation Setup.
-                </p>
+              <p className="mb-4">
+                Our services include:
+                <span className="font-semibold"> Social Media Management</span>,
+                <span className="font-semibold"> Paid Advertising</span>,
+                <span className="font-semibold"> Branding</span>,
+                <span className="font-semibold"> Website Development</span>,
+                <span className="font-semibold"> SEO & Performance Marketing</span>,
+                and <span className="font-semibold"> Automation Funnels</span>.
+              </p>
 
-                <p>
-                  Every project is led with transparency, collaboration, and a “your success is our success” mindset.
-                  Let’s grow your brand with confidence, creativity, and clear results — the VBizGro way.
-                </p>
-              </div>
+              <p>
+                With transparent communication, modern design, and a “growth-first” approach,
+                we ensure every brand gets the attention, voice, and impact it deserves.
+                <br />
+                <strong>Let’s grow smarter. Let’s grow VBizGro.</strong>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

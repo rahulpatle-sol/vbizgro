@@ -15,11 +15,11 @@ const serviceData = [
       "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200",
   },
   {
-    title: "Performance Marketing & ROAS",
+    title: "Post Design & Crausial desing",
     description:
-      "Conversion-focused campaigns across all channels. We optimize every dollar for maximum ROAS and sustainable growth.",
+      "Conversion-focused campaigns across all channels. We optimize every post for   sustainable growth.",
     image:
-      "https://images.unsplash.com/photo-1528605248644-14dd04022aa2?q=80&w=1200",
+      "",
   },
   {
     title: "Brand Identity & Visual Systems",

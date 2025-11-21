@@ -14,3 +14,25 @@
     
     
 }
+
+.banner {
+  text-align: center;
+  position: relative;
+}
+
+.slider {
+  transform-style: preserve-3d;
+}
+
+.slider .item {
+  transform-style: preserve-3d;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(10px) rotateX(2deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(2deg) rotateY(360deg);
+  }
+}
