@@ -4,7 +4,7 @@ import React from "react";
 // - Uses Tailwind CSS classes for styling (no imports required)
 // - Image currently points to the uploaded local file path. To use an Unsplash image, replace the `imgSrc` value with an Unsplash URL.
 
-const imgSrc = "/mnt/data/737db004-334d-429d-939e-d7e88afc9e6b.png"; // local image (provided)
+const imgSrc = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop"; // local image (provided)
 // Example Unsplash replacement: const imgSrc = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1400&q=80&auto=format&fit=crop";
 
 export default function VBizGroAbout() {

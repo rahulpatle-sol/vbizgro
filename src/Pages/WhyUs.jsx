@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
 
       {/* Decorative brand motif (low opacity) */}
       <img
-        src="/mnt/data/54f94ee7-778c-4a4b-abda-43070fcb09df.png"
+       src="https://www.vbizgro.com/assets/logo-removebg-preview.png"
         alt="decorative"
         className="pointer-events-none absolute left-8 top-8 w-64 opacity-10 mix-blend-multiply select-none"
         aria-hidden="true"
