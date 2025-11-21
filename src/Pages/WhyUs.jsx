@@ -121,7 +121,7 @@ export default function WhyChooseUs() {
               className="mt-6"
             >
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-3 rounded-full px-6 py-3 bg-gradient-to-r from-white to-indigo-50 text-slate-900 border border-white/70 shadow-[0_8px_24px_rgba(99,102,241,0.08)] hover:shadow-[0_12px_32px_rgba(99,102,241,0.12)] transition hover:-translate-y-0.5"
               >
                 Work with Us
@@ -212,7 +212,7 @@ export default function WhyChooseUs() {
 
               <motion.div whileHover={{ scale: 1.02 }} className="mt-6">
                 <a
-                  href="#pricing"
+                  href="/pricing"
                   className="text-indigo-700 font-medium underline underline-offset-4"
                 >
                   See our plans →
@@ -284,7 +284,7 @@ export default function WhyChooseUs() {
           </motion.p>
 
           <motion.a
-            href="#method"
+            href="/process"
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}

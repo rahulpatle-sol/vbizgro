@@ -21,10 +21,11 @@ import TeamCarousel from "./Pages/Team.jsx";
 import VBizGroFAQ from "./Pages/Faq.jsx"
 import AnalyticsSection from "./Pages/Analytics.jsx";
 import ContactUsSection from "./Pages/CtaForm.jsx";
+import PricingSection from "./Pages/Pricing.jsx";
 function App() {
   return (
     <>
-      <Navbar />
+    
       <Sidebar />
 
       <Routes>
@@ -46,7 +47,6 @@ function App() {
 <VBizGroFAQ/>
 <ContactUsSection/>
 
-              <Footer />
             </>
           }
         />
@@ -58,6 +58,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs/>} />
+        <Route path="/pricing" element={<PricingSection/>} />
+        <Route path="/process" element={<ProcessSection/>} />
       </Routes>
     </>
   );

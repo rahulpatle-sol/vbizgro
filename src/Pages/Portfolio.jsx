@@ -2,88 +2,123 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const portfolioItems = [
-  { img: "/images/work1.jpg", title: "Campaign Strategy" },
-  { img: "/images/work2.jpg", title: "Instagram Growth" },
-  { img: "/images/work3.jpg", title: "Creative Ads" },
-  { img: "/images/work4.jpg", title: "Brand Storytelling" },
-  { img: "/images/work5.jpg", title: "Content Funnel" },
-  { img: "/images/work6.jpg", title: "Analytics Dashboard" },
-  { img: "/images/work7.jpg", title: "Community Engagement" },
-  { img: "/images/work8.jpg", title: "Design Showcase" },
+  {
+    img: "/images/work1.png",
+    title: "Campaign Strategy",
+    desc: "Crafted multi-channel campaigns with measurable ROI. We blended creativity with analytics to deliver campaigns that inspire and convert.",
+  },
+  {
+    img: "/images/work2.png",
+    title: "Instagram Growth",
+    desc: "Scaled organic reach with reels and influencer collabs. Built community-driven engagement with modern storytelling.",
+  },
+  {
+    img: "/images/work3.png",
+    title: "Creative Ads",
+    desc: "Designed high-converting ad creatives with A/B testing. Every pixel crafted to elevate brand presence.",
+  },
+  {
+    img: "/images/work4.png",
+    title: "Brand Storytelling",
+    desc: "Narratives that build emotional connection with audiences. Turning ideas into stories that resonate deeply.",
+  },
+  {
+    img: "/images/work5.png",
+    title: "Content Funnel",
+    desc: "Optimized funnel with blogs, newsletters, and lead magnets. Driving conversions through strategic content.",
+  },
+  {
+    img: "/images/work6.png",
+    title: "Analytics Dashboard",
+    desc: "Custom dashboards tracking KPIs and campaign health. Empowering brands with actionable insights.",
+  },
 ];
 
-export default function PortfolioPage() {
+export default function PortfolioSection() {
   return (
-    <section className="relative w-full min-h-screen bg-[#fcfcfd] text-[#0f172a] font-[EXO] overflow-hidden my-48">
-      {/* Abstract PNG background */}
-      <div className="absolute inset-0 bg-[url('/images/bg-layer.png')] bg-cover bg-center opacity-10 pointer-events-none" />
+    <section className="relative w-full bg-white text-[#0f172a] overflow-hidden py-32">
+      {/* Decorative radial background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute left-1/2 top-12 transform -translate-x-1/2 w-[620px] h-[620px] rounded-full opacity-40 blur-3xl"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1605726135442-468dd2b7eff1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGdhcmRpbnQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            mixBlendMode: "screen",
+          }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-[#dbeafe] opacity-50" />
+      </div>
 
-      {/* Central circular gradient + radial points */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
-        <div className="w-[480px] h-[480px] rounded-full bg-gradient-to-br from-purple-300 via-pink-200 to-indigo-200 opacity-40 blur-2xl" />
-        {[...Array(12)].map((_, i) => (
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto text-center bg-white/95 backdrop-blur-sm rounded-2xl px-10 py-12 shadow-xl border border-white/60"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+            Creative Execution That Delivers Growth.
+          </h2>
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Design, content, and campaigns crafted to elevate modern brands with cinematic polish.
+          </p>
           <div
-            key={i}
-            className="absolute w-[2px] h-[160px] bg-black/10 origin-bottom"
+            className="mt-6 h-1.5 w-40 mx-auto rounded-full"
             style={{
-              transform: `rotate(${i * 30}deg) translateY(-80px)`,
+              background: "linear-gradient(90deg,#2563eb,#7c3aed)",
             }}
-          >
-            <div className="w-2 h-2 rounded-full bg-black absolute bottom-0 left-1/2 transform -translate-x-1/2 animate-pulse" />
-          </div>
-        ))}
-      </div>
+          />
+        </motion.div>
 
-      {/* Heading */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center mb-20">
-        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-          YOUR <span className="text-indigo-600">FAVOURITE</span> DESIGNER
-        </h2>
-        <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-          A showcase of campaigns, designs, and strategies we’ve built in social media marketing.
-        </p>
-        <div className="mt-6 h-[3px] w-24 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
-      </div>
+        {/* Portfolio grid */}
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {portfolioItems.map((item, i) => (
+            <motion.article
+              key={i}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: i * 0.1, ease: "easeOut" }}
+              className="group relative rounded-3xl overflow-hidden bg-white shadow-[0_18px_50px_rgba(15,23,42,0.08)] border border-white/60 hover:scale-[1.02] transition-transform duration-500"
+            >
+              {/* image */}
+              <div className="h-[420px] w-full overflow-hidden relative">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* hover overlay text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                  <p className="text-base text-white leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+              {/* title area */}
+              <div className="p-8 bg-white/80">
+                <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+              </div>
+            </motion.article>
+          ))}
+        </div>
 
-      {/* Portfolio Grid */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {portfolioItems.map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`group rounded-2xl overflow-hidden shadow-[0_12px_32px_rgba(15,23,42,0.08)] backdrop-blur-md border border-white/60 bg-white transition-transform duration-300 hover:scale-[1.02]
-              ${i % 2 === 0 ? "rotate-[-3deg]" : "rotate-[3deg]"} hover:rotate-0`}
-          >
-            <div className="h-64 w-full overflow-hidden relative">
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent pointer-events-none" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-bold text-[#0f172a]">{item.title}</h3>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Footer Info */}
-      <div className="absolute bottom-6 left-6 text-xs text-slate-500 font-medium">
-        PORTFOLIO
-      </div>
-      <div className="absolute bottom-6 right-6 text-xs text-slate-500 font-medium">
-        © 2025
-      </div>
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-slate-500 font-medium">
-        designwithrahul@gmail.com
-      </div>
-      <div className="absolute top-6 left-6 text-xs text-slate-500 font-medium">
-        @vbizgro
+        {/* Footer info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          className="mt-16 flex items-center justify-between text-sm text-slate-500"
+        >
+          <div>PORTFOLIO</div>
+          <div>© {new Date().getFullYear()}</div>
+          <div>designwithrahul@gmail.com</div>
+        </motion.div>
       </div>
     </section>
   );

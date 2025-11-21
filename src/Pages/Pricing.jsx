@@ -148,7 +148,7 @@ export default function PricingSection() {
               {/* CTA */}
               <div className="mt-6">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="inline-block px-6 py-3 rounded-full bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-500/30"
                 >
                   Get Started

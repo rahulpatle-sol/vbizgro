@@ -1,116 +1,281 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { Instagram, Linkedin, Facebook } from "lucide-react";
 
-const Footer = () => {
+export default function Footer() {
+  const rootRef = useRef(null);
+  const brandRef = useRef(null);
+  const colRefs = useRef([]);
+  const moreRef = useRef(null);
+  const btnRef = useRef(null);
+  const socialRefs = useRef([]);
+  const revealRef = useRef(null);
+
   useEffect(() => {
-    const btn = document.getElementById('viewMoreBtnf');
-    const more = document.getElementById('moreServices');
-    if (btn && more) {
-      btn.addEventListener('click', () => {
-        more.classList.toggle('hidden');
-        btn.textContent = more.classList.contains('hidden') ? 'View More' : 'View Less';
+    // Entrance reveal for footer block
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        revealRef.current,
+        { y: 28, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.9, ease: "power3.out", stagger: 0.06 }
+      );
+
+      gsap.from(colRefs.current, {
+        y: 18,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.08,
+        delay: 0.12,
       });
-    }
+
+      gsap.from(brandRef.current, {
+        scale: 0.98,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.2)",
+        delay: 0.08,
+      });
+
+      gsap.set(socialRefs.current, { scale: 1 });
+    }, rootRef);
+
+    return () => ctx.revert();
   }, []);
 
-  return (
-    <footer className="relative bg-black border-t border-gray-800 py-20 overflow-hidden font-nico-moji">
-      {/* Background image */}
-      <img
-        src="https://images.unsplash.com/photo-1681101378971-5f5dc4e5000e?q=80&w=1657&auto=format&fit=crop"
-        alt="Tech Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-10 z-0"
-      />
+  useEffect(() => {
+    const btn = btnRef.current;
+    const more = moreRef.current;
+    if (!btn || !more) return;
 
-      {/* Gradient orb */}
-      <div className="absolute inset-0 flex justify-center items-center z-0">
-        <div className="w-72 h-72 bg-gradient-to-br from-orange-600/40 to-red-600/20 rounded-full blur-3xl"></div>
+    // Start hidden
+    gsap.set(more, { height: 0, opacity: 0, display: "none", overflow: "hidden" });
+
+    function toggle() {
+      const isHidden = getComputedStyle(more).display === "none";
+
+      if (isHidden) {
+        gsap.set(more, { display: "block" });
+        gsap.fromTo(
+          more,
+          { height: 0, opacity: 0 },
+          {
+            height: "auto",
+            opacity: 1,
+            duration: 0.45,
+            ease: "power3.out",
+            onComplete() {
+              btn.textContent = "View Less";
+              btn.setAttribute("aria-expanded", "true");
+            },
+          }
+        );
+      } else {
+        gsap.to(more, {
+          height: 0,
+          opacity: 0,
+          duration: 0.38,
+          ease: "power3.in",
+          onComplete() {
+            gsap.set(more, { display: "none" });
+            btn.textContent = "View More Services";
+            btn.setAttribute("aria-expanded", "false");
+          },
+        });
+      }
+    }
+
+    btn.addEventListener("click", toggle);
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggle();
+      }
+    });
+
+    return () => {
+      btn.removeEventListener("click", toggle);
+    };
+  }, []);
+
+  // social hover interactions
+  function handleSocialEnter(i) {
+    gsap.to(socialRefs.current[i], { scale: 1.08, y: -4, duration: 0.22, ease: "power2.out" });
+  }
+  function handleSocialLeave(i) {
+    gsap.to(socialRefs.current[i], { scale: 1, y: 0, duration: 0.32, ease: "power3.out" });
+  }
+
+  return (
+    <footer
+      ref={rootRef}
+      className="relative bg-white border-t border-gray-200 py-20 overflow-hidden font-sans"
+      aria-labelledby="footer-heading"
+    >
+      {/* subtle patterned backdrop */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+        <div className="w-full h-full bg-[url('https://www.transparenttextures.com/patterns/grid.png')]"></div>
       </div>
 
-      {/* Footer content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-12 text-sm text-gray-400">
-        {/* Social */}
-        <div className="space-y-4">
-          <h2 className="uppercase tracking-widest text-white">Follow us</h2>
-          <div className="flex flex-wrap gap-3">
-            <a href="https://www.linkedin.com/company/vbizgro" className="p-3 border border-gray-700 hover:bg-gray-800 hover:text-white transition rounded-md">
-              <i className="ri-linkedin-fill text-xl"></i>
-            </a>
-            <a href="https://www.facebook.com/people/Vbizgro/61581148455498/" className="p-3 border border-gray-700 hover:bg-gray-800 hover:text-white transition rounded-md">
-              <i className="ri-facebook-fill text-xl"></i>
-            </a>
-            <a href="https://www.instagram.com/vbizgro/" className="p-3 border border-gray-700 hover:bg-gray-800 hover:text-white transition rounded-md">
-              <i className="ri-instagram-line text-xl"></i>
-            </a>
-            <a href="#" className="p-3 border border-gray-700 hover:bg-gray-800 hover:text-white transition rounded-md">
-              <i className="ri-twitter-fill text-xl"></i>
-            </a>
+      <div ref={revealRef} className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-600 text-sm">
+          {/* Brand */}
+          <div ref={brandRef}>
+            <h1 id="footer-heading" className="text-4xl font-black text-black tracking-tight">
+              vbizgro
+            </h1>
+            <p className="mt-3 text-gray-500 max-w-xs">
+              Creative execution that delivers clarity, scale, and growth.
+            </p>
+
+            <div className="flex gap-3 mt-6">
+              <a
+                href="https://instagram.com/vbizgro"
+                target="_blank"
+                rel="noreferrer"
+                ref={(el) => (socialRefs.current[0] = el)}
+                onMouseEnter={() => handleSocialEnter(0)}
+                onMouseLeave={() => handleSocialLeave(0)}
+                className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition inline-flex items-center justify-center"
+                aria-label="Instagram - VBizGro"
+              >
+                <Instagram size={18} className="text-gray-700" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/vbizgro"
+                target="_blank"
+                rel="noreferrer"
+                ref={(el) => (socialRefs.current[1] = el)}
+                onMouseEnter={() => handleSocialEnter(1)}
+                onMouseLeave={() => handleSocialLeave(1)}
+                className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition inline-flex items-center justify-center"
+                aria-label="LinkedIn - VBizGro"
+              >
+                <Linkedin size={18} className="text-gray-700" />
+              </a>
+
+              <a
+                href="https://www.facebook.com/people/Vbizgro/61581148455498/"
+                target="_blank"
+                rel="noreferrer"
+                ref={(el) => (socialRefs.current[2] = el)}
+                onMouseEnter={() => handleSocialEnter(2)}
+                onMouseLeave={() => handleSocialLeave(2)}
+                className="p-2 rounded-full border border-gray-300 hover:bg-gray-100 transition inline-flex items-center justify-center"
+                aria-label="Facebook - VBizGro"
+              >
+                <Facebook size={18} className="text-gray-700" />
+              </a>
+            </div>
+          </div>
+
+          {/* Company links */}
+          <div ref={(el) => (colRefs.current[0] = el)}>
+            <h3 className="uppercase tracking-widest text-black mb-4 text-sm">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="/pricing" className="hover:text-black transition">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-black transition">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/faq" className="hover:text-black transition">
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Help */}
+          <div ref={(el) => (colRefs.current[1] = el)}>
+            <h3 className="uppercase tracking-widest text-black mb-4 text-sm">Help Center</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="/terms" className="hover:text-black transition">
+                  Terms
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="hover:text-black transition">
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a href="/support" className="hover:text-black transition">
+                  Support
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div ref={(el) => (colRefs.current[2] = el)}>
+            <h3 className="uppercase tracking-widest text-black mb-4 text-sm">Services</h3>
+
+            <ul className="space-y-2">
+              <li>
+                <a href="/services/instagram" className="hover:text-black transition">
+                  Instagram Management
+                </a>
+              </li>
+              <li>
+                <a href="/services/linkedin" className="hover:text-black transition">
+                  LinkedIn Content Writing
+                </a>
+              </li>
+              <li>
+                <a href="/services/branding" className="hover:text-black transition">
+                  Personal Branding
+                </a>
+              </li>
+
+              {/* Hidden extra services (animated) */}
+              <div ref={moreRef} className="mt-2">
+                <li>
+                  <a href="/services/reels" className="hover:text-black transition">
+                    Reels & Video Editing
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/carousel" className="hover:text-black transition">
+                    Carousel Design
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/strategy" className="hover:text-black transition">
+                    Social Media Strategy
+                  </a>
+                </li>
+                <li>
+                  <a href="/services/optimization" className="hover:text-black transition">
+                    Profile Optimization
+                  </a>
+                </li>
+              </div>
+            </ul>
+
+            <button
+              ref={btnRef}
+              id="viewMoreBtnf"
+              className="mt-4 text-indigo-600 hover:text-black text-sm transition focus:outline-none"
+              aria-expanded="false"
+            >
+              View More Services
+            </button>
           </div>
         </div>
 
-        {/* About */}
-        <div>
-          <h3 className="uppercase tracking-widest mb-4 text-white">About Us</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white transition">Pricing</a></li>
-            <li><a href="#" className="hover:text-white transition">Contact</a></li>
-            <li><a href="#" className="hover:text-white transition">FAQ</a></li>
-          </ul>
+        {/* Bottom */}
+        <div className="relative z-10 border-t border-gray-200 mt-16 pt-6 text-center text-xs text-gray-500">
+          <p>© {new Date().getFullYear()} VBizGro — All rights reserved.</p>
         </div>
-
-        {/* Help */}
-        <div>
-          <h3 className="uppercase tracking-widest mb-4 text-white">Help Center</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white transition">Terms</a></li>
-            <li><a href="#" className="hover:text-white transition">Privacy</a></li>
-            <li><a href="#" className="hover:text-white transition">Security</a></li>
-            <li><a href="#" className="hover:text-white transition">Affiliate</a></li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h3 className="uppercase tracking-widest mb-4 text-white">Services</h3>
-          <ul className="space-y-2 text-gray-400 text-sm">
-            {/* Top 3 Services */}
-            <li><a href="#" className="hover:text-white transition">Instagram Management</a></li>
-            <li><a href="#" className="hover:text-white transition">LinkedIn Content Writing</a></li>
-            <li><a href="#" className="hover:text-white transition">Personal Branding</a></li>
-
-            {/* Hidden extra services */}
-            <div id="moreServices" className="hidden space-y-2 mt-2">
-              <li><a href="#" className="hover:text-white transition">Reels & Video Editing</a></li>
-              <li><a href="#" className="hover:text-white transition">Carousel Design</a></li>
-              <li><a href="#" className="hover:text-white transition">Social Media Strategy</a></li>
-              <li><a href="#" className="hover:text-white transition">Profile Optimization</a></li>
-              <li><a href="#" className="hover:text-white transition">Facebook Page Management</a></li>
-              <li><a href="#" className="hover:text-white transition">Startup Brand Building</a></li>
-              <li><a href="#" className="hover:text-white transition">Creative Post Design</a></li>
-            </div>
-          </ul>
-          <button id="viewMoreBtnf" className="mt-4 text-indigo-400 hover:text-white text-sm transition">
-            View More
-          </button>
-        </div>
-
-        {/* Press */}
-        <div>
-          <h3 className="uppercase tracking-widest mb-4 text-white">Press</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white transition">Investors</a></li>
-            <li><a href="#" className="hover:text-white transition">Terms of Use</a></li>
-            <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition">Cookie Policy</a></li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="relative z-10 border-t border-gray-800 mt-16 pt-6 text-center text-xs text-gray-500">
-        <p>vbizgro <br />© 2025 All rights reserved</p>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
