@@ -83,8 +83,8 @@ export default function TeamSwiper() {
                 {/* Avatar + Info */}
                 <div className="p-6 flex flex-col items-center justify-center flex-grow">
                   <img
-                    src={member.avatar}
-                    alt={member.name}
+                    // src={member.avatar}
+                    // alt={member.name}
                     className="w-16 h-16 rounded-full object-cover mb-4 shadow-md ring-2 ring-indigo-500"
                   />
                   <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>

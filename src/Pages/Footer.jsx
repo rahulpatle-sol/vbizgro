@@ -121,14 +121,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-600 text-sm">
           {/* Brand */}
           <div ref={brandRef}>
-            <h1 id="footer-heading" className="text-4xl font-black text-black tracking-tight">
-              vbizgro
-            </h1>
-            <p className="mt-3 text-gray-500 max-w-xs">
+          <img src="/logo.png" alt="" className="h-20 w-full item-center object-cover m" />
+            <p className="mt-3 ml-12  text-gray-500 max-w-xs">
               Creative execution that delivers clarity, scale, and growth.
             </p>
 
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-3 mt-6 ml-12 ">
               <a
                 href="https://instagram.com/vbizgro"
                 target="_blank"

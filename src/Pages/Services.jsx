@@ -13,28 +13,28 @@ const serviceData = [
     description:
       "Deep audience research, competitive intelligence and strategic architecture. We build market-ready blueprints that give your brand leverage.",
     image:
-      "https://media.istockphoto.com/id/1135581630/photo/administrator-business-man-financial-inspector-and-secretary-making-report-calculating.webp?a=1&b=1&s=612x612&w=0&k=20&c=GyfoGKIpexJN0C-vMOskmzj4VkNtILoPKzvI1yyLP7o=",
+      "/images/post1.png"
   },
   {
     title: "Post Design & Creative Campaigns",
     description:
       "High-converting creative systems. From social design to campaign funnels — crafted to drive attention and sustainable brand growth.",
-    image:"https://imgs.search.brave.com/WN-eIgrc3Y6sN7OQ2wRay2oina4O0U-qN8qSuEwsm7k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9rb3Rh/LWNvbnRlbnQuYi1j/ZG4ubmV0L2FwcC91/cGxvYWRzLzIwMjUv/MDEvY3JlYXRpdmUt/d2ViLWRlc2lnbi1p/bnNwby0yMDI1LnBu/Zw"
+    image:"/images/post8.png"
     ,
   },
   {
     title: "Brand Identity & Visual Systems",
     description:
       "Holistic identity systems with precision. Typography, motion rules, and a visual language that makes your brand instantly recognizable.",
-    image:
-      "https://images.unsplash.com/photo-1761721941777-0809df59ce42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image:"/images/post6.png"
+   
   },
   {
     title: "Content Creation & Storytelling",
     description:
       "Narrative-driven content crafted for modern platforms — production, scripting, editing and distribution that moves audiences.",
     image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200",
+      "images/work3.png",
   },
 ];
 
@@ -158,15 +158,15 @@ export default function ServicesPremium() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
         {/* HERO INTRO BLOCK (Premium top feel) */}
-        <div className="text-center mb-32">
+        <div className="text-center  flex items-center flex-col">
           <motion.h1
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight"
+            className="text-3xl md:text-6xl lg:text-7xl font-extrabold  text-center tracking-tight"
           >
             Services That Build <span className="text-indigo-600">Brand Power</span>
           </motion.h1>
@@ -176,10 +176,13 @@ export default function ServicesPremium() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-            className="mt-4 text-2xl md:text-xl text-slate-600 max-w-3xl mx-auto"
+            className=" text-2xl md:text-xl text-slate-600 max-w-3xl mx-auto py-12"
           >
             From strategy to storytelling — we craft every layer of your brand with precision,
             pride, and cinematic clarity.
+            We dive deep into your vision, shape narratives that resonate, design experiences that stand out, and build digital identities that feel bold, modern, and unforgettable.
+Every detail is intentional. Every decision is strategic. Every outcome is crafted to elevate your brand into a story the world remembers
+
           </motion.p>
 
       
@@ -199,7 +202,7 @@ export default function ServicesPremium() {
             Design, content, and campaigns crafted to elevate modern brands.
           </p>
 
-          <div className="mx-auto mt-6 h-[3px] w-24 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500" />
+          <div className="mx-auto mt-6 h-[2px] w-24 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500" />
         </div>
 
         {/* Services cards */}
@@ -221,7 +224,7 @@ export default function ServicesPremium() {
                     ref={(el) => (parallaxRefs.current[index] = el)}
                     src={service.image}
                     alt={service.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                   {/* Soft gloss */}
                   <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-black/10 pointer-events-none" />
@@ -290,14 +293,14 @@ export default function ServicesPremium() {
 
             <div className="mt-6 flex items-center justify-center gap-4">
               <a
-                href="#method"
+                href="/process"
                 className="px-5 py-2.5 rounded-full border border-white/70 bg-gradient-to-r from-white to-indigo-50 text-slate-900 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(99,102,241,0.12)] transition"
               >
                 Explore our methodology
               </a>
 
               <a
-                href="#contact"
+                href="/contact"
                 className="px-5 py-2.5 rounded-full bg-indigo-600 text-white shadow-[0_8px_24px_rgba(99,102,241,0.25)] hover:bg-indigo-700 transition"
               >
                 Talk to us

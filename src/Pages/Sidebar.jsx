@@ -56,13 +56,13 @@ export default function Sidebar() {
 
       {/* Branding */}
       <div ref={brandRef} className="flex flex-col items-center gap-2 mt-2">
-        <img
-          src="https://www.vbizgro.com/assets/logo-removebg-preview.png"
+        {/* <img
+          src="/images/logo.png"
           alt="VBizGro logo"
           className="w-12 h-12 object-contain rounded-md shadow-sm"
-        />
-        <span className="text-[10px] font-semibold tracking-wide text-slate-800">VBIZGRO</span>
-        <span className="text-[9px] text-slate-500">Creative Studio</span>
+        /> */}
+        <span className="text-[20px] font-semibold tracking-wide text-slate-800 ">Vbizgro</span>
+        <span className="text-[12px] text-slate-500">Creative Studio</span>
       </div>
 
       {/* Socials */}

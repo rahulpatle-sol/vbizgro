@@ -166,7 +166,7 @@ export default function VBizGroAboutFinal() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {[
             { label: "Projects Delivered", value: "120+" },
-            { label: "Campaign ROAS", value: "3.8x" },
+            { label: "Campaign ROI", value: "3.8x" },
             { label: "Client Retention", value: "92%" },
             { label: "Avg. SLA", value: "48h" },
           ].map((stat, i) => (
@@ -248,63 +248,7 @@ export default function VBizGroAboutFinal() {
         </div>
 
         {/* Combined Team: Core Team + Guests */}
-        <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">The team behind the craft</h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {/* Static core team first */}
-            {staticTeam.map((t, i) => (
-              <motion.div
-                key={`static-${i}`}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-white shadow-[0_12px_32px_rgba(15,23,42,0.06)] border border-white/70 text-center"
-              >
-                <img
-                  src={t.img}
-                  alt={t.name}
-                  className="mx-auto w-20 h-20 rounded-full object-cover border"
-                />
-                <div className="mt-3 text-sm font-semibold">{t.name}</div>
-                <div className="text-xs text-slate-600">{t.role}</div>
-              </motion.div>
-            ))}
-
-            {/* Guests from API */}
-            {guests.length > 0 ? (
-              guests.map((g, idx) => (
-                <motion.div
-                  key={`guest-${idx}`}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="p-6 rounded-2xl bg-white shadow-[0_12px_32px_rgba(15,23,42,0.06)] border border-white/70 text-center"
-                >
-                  <img
-                    src={g.img}
-                    alt={g.name}
-                    className="mx-auto w-20 h-20 rounded-full object-cover border"
-                  />
-                  <div className="mt-3 text-sm font-semibold">{g.name}</div>
-                  <div className="text-xs text-slate-600">{g.role}</div>
-                </motion.div>
-              ))
-            ) : (
-              // show placeholders while loading
-              Array.from({ length: 4 }).map((_, ph) => (
-                <div
-                  key={`ph-${ph}`}
-                  className="p-6 rounded-2xl bg-white/60 animate-pulse border border-white/70 text-center"
-                >
-                  <div className="mx-auto w-20 h-20 rounded-full bg-gray-200" />
-                  <div className="mt-3 h-3 w-24 bg-gray-200 mx-auto rounded" />
-                  <div className="mt-2 h-2 w-16 bg-gray-200 mx-auto rounded" />
-                </div>
-              ))
-            )}
-          </div>
-        </div>
+     
 
         {/* Closing CTA */}
         <div className="rounded-3xl bg-white shadow-[0_18px_52px_rgba(15,23,42,0.08)] border border-white/70 p-10 text-center">

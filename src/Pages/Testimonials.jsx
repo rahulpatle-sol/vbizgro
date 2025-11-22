@@ -103,11 +103,11 @@ export default function TestimonialsTopNotch() {
             {/* Gradient Header */}
             <div className="px-6 py-4 bg-gradient-to-r from-indigo-100 via-white to-purple-100">
               <div className="flex items-center gap-4">
-                <img
+                {/* <img
                   src={t.img}
                   alt={t.name}
                   className="w-12 h-12 rounded-full object-cover border border-indigo-200"
-                />
+                /> */}
                 <div>
                   <h4 className="text-md font-bold text-[#0f172a]">{t.name}</h4>
                   <p className="text-xs text-slate-500">{t.role}</p>

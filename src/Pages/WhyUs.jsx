@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
                   className="absolute inset-0"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80')",
+                      "url('/images/post8.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     filter: "saturate(0.95) contrast(0.95)",
