@@ -167,7 +167,7 @@ export default function FullContactSection() {
         {/* Right Info Panel */}
         <div className="bg-pink-50 text-black rounded-3xl p-10 shadow-xl">
           <h3 className="text-3xl font-bold">Hi there!</h3>
-          <p className="text-white/70 mt-2">
+          <p className="text-black/70 mt-2">
             We’re always here and happy to help you anytime.
           </p>
 
@@ -176,15 +176,15 @@ export default function FullContactSection() {
               <span className="text-2xl">📧</span>
               <div>
                 <p className="text-sm text-white/60">Email</p>
-                <p className="text-white">sale@vbizgro.com</p>
+                <p className="text-white">sales@vbizgro.com</p>
               </div>
             </div>
 
             <div className="bg-[#1a1a1a] p-5 rounded-xl flex items-center gap-4">
               <span className="text-2xl">📱</span>
               <div>
-                <p className="text-sm text-white/60">Phone Number</p>
-                <p className="text-white">91 9752505639</p>
+                <p className="text-sm text-white/60">Phone</p>
+                <p className="text-white">+91 9752505639</p>
               </div>
             </div>
 
@@ -192,13 +192,9 @@ export default function FullContactSection() {
               <span className="text-2xl">📍</span>
               <div>
                 <p className="text-sm text-white/60">Address</p>
-                <p className="text-white">Keshari nagar Seoni M.P.</p>
+                <p className="text-white">Keshari Nagar, Seoni M.P.</p>
               </div>
             </div>
-          </div>
-
-          <div className="mt-10">
-        
           </div>
         </div>
       </div>

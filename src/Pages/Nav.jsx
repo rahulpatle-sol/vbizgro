@@ -100,7 +100,7 @@ const FloatingNavbar = () => {
           <img
             src="/logo.png"
             alt="VBIZGRO Logo"
-            className="w-28 h-10 object-contain"
+            className="w-24 rounded hover:caret-amber-100 h-10 object-cover"
             style={{ filter: "drop-shadow(0 6px 18px rgba(15,23,42,0.06))" }}
           />
           <span className="hidden md:inline text-sm font-medium tracking-tight">VBIZGRO</span>
