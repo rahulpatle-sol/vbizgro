@@ -227,12 +227,34 @@ export default function FullContactSection() {
 
             <div className="md:col-span-2 flex items-center gap-4 mt-2">
               <button
-                type="submit"
-                className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition"
-              >
-                <Send size={16} />
-                Send Message
-              </button>
+  type="button"
+  className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition"
+  onClick={() => {
+    const first = document.querySelector("input[name='first']").value;
+    const last = document.querySelector("input[name='last']").value;
+    const email = document.querySelector("input[name='email']").value;
+    const phone = document.querySelector("input[name='phone']").value;
+    const message = document.querySelector("textarea[name='message']").value;
+
+    const subject = `New Project Inquiry from ${first} ${last}`;
+    const body = `
+Name: ${first} ${last}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+    `;
+
+    window.location.href = `mailto:sales@vbizgro.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  }}
+>
+  <Send size={16} />
+  Send Message
+</button>
+
 
               <a
                 href={`https://wa.me/919752505639?text=${encodeURIComponent("Hi VbizGro, I want to start a project")}`}
