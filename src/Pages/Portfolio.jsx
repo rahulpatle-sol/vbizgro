@@ -115,9 +115,7 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           className="mt-16 flex items-center justify-between text-sm text-slate-500"
         >
-          <div>PORTFOLIO</div>
-          <div>© {new Date().getFullYear()}</div>
-          <div>designwithrahul@gmail.com</div>
+      
         </motion.div>
       </div>
     </section>

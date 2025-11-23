@@ -102,7 +102,7 @@ export default function FullContactSection() {
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900"
+          className="text-2xl md:text-5xl font-medium my-12 py-4 tracking-tight text-slate-900"
         >
           Creative Execution That{" "}
           <span className="text-indigo-600">Delivers Growth.</span>
@@ -305,7 +305,7 @@ ${message}
               </div>
               <div>
                 <p className="text-xs text-slate-500">Address</p>
-                <p className="text-sm font-medium">Keshari Nagar, Seoni M.P.</p>
+                <p className="text-sm font-medium">Kesri Nagar, Seoni M.P. India</p>
               </div>
             </div>
 

@@ -166,7 +166,7 @@ export default function ServicesPremium() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl md:text-6xl lg:text-7xl font-extrabold  text-center tracking-tight"
+            className="text-3xl md:text-6xl lg:text-7xl font-medium text-center tracking-tight"
           >
             Services That Build <span className="text-indigo-600">Brand Power</span>
           </motion.h1>
@@ -262,8 +262,7 @@ Every detail is intentional. Every decision is strategic. Every outcome is craft
                     >
                       Deep Dive →
                     </a>
-               <a
-  href="https://wa.me/919752505639?text=Hi%20I%20want%20to%20start%20a%20project%20with%20VbizGro"
+               <a href="https://wa.me/919752505639?text=Hi%20I%20want%20to%20start%20a%20project%20with%20VbizGro"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-600 text-white shadow-[0_8px_24px_rgba(99,102,241,0.25)] hover:bg-indigo-700 transition"

@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: -18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-center font-light text-slate-900 leading-tight"
             >
               We Make a Difference
             </motion.h2>
@@ -189,7 +189,43 @@ export default function WhyChooseUs() {
                     </p>
                   </div>
                 </li>
+                   <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-50 border border-white/70 shadow-sm">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-purple-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M2 11a1 1 0 011-1h3v6H3a1 1 0 01-1-1v-4zM9 5v10H8a1 1 0 01-1-1V5h2zm8 0v10h-2V5h2z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <strong className="block">Consitant Growth  </strong>
+                    <p className="text-xs text-slate-600">
+                     Crafting the consitant enatomy  for social growth and brand building.
+                    </p>
+                  </div>
+                </li>
 
+   <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-50 border border-white/70 shadow-sm">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 text-purple-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M2 11a1 1 0 011-1h3v6H3a1 1 0 01-1-1v-4zM9 5v10H8a1 1 0 01-1-1V5h2zm8 0v10h-2V5h2z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <strong className="block">Design & Develop scable system</strong>
+                    <p className="text-xs text-slate-600">
+                  A scalable system is built to grow smoothly with demand.
+                    </p>
+                  </div>
+                </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-50 border border-white/70 shadow-sm">
                     <svg

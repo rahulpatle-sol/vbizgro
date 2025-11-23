@@ -24,7 +24,7 @@ import VBizGroFAQ from "./Pages/Faq.jsx";
 import ContactUsSection from "./Pages/CtaForm.jsx";
 import ContactUs from "./Pages/Contact.jsx";
 import PageNotFound from "./Pages/404.jsx";
-
+import FilmstripReel from "./Components/ThreeDslider.jsx";
 function App() {
   const location = useLocation();
 
@@ -54,11 +54,13 @@ function App() {
               <AboutUs />
               <Pricing />
               <Testimonials />
+              <FilmstripReel/>
               <Team />
               <AnalyticsSection />
+              
               <VBizGroFAQ />
               <ContactUsSection />
-              <Footer />
+           
             </>
           }
         />

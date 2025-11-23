@@ -38,8 +38,8 @@ export default function VBizGroAboutFinal() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#fbfbfd] text-[#0f172a] py-24 px-6">
-      <div className="mx-auto w-full max-w-7xl">
+    <section className="min-h-screen bg-[#fbfbfd] text-[#0f172a] py-4 mt-24 px-6">
+      <div className="mx-auto w-full max-w-7xl py-12">
 
         {/* Decorative combined radial using uploaded file */}
         <div
