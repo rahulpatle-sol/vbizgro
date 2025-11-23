@@ -23,6 +23,7 @@ import AnalyticsSection from "./Pages/Analytics.jsx";
 import ContactUsSection from "./Pages/CtaForm.jsx";
 import PricingSection from "./Pages/Pricing.jsx";
 import PageNotFound from "./Pages/404.jsx";
+import Faqs from "./Pages/Faq.jsx"
 function App() {
   return (
     <>
@@ -61,6 +62,7 @@ function App() {
         <Route path="/contact" element={<ContactUs/>} />
         <Route path="/pricing" element={<PricingSection/>} />
         <Route path="/process" element={<ProcessSection/>} />
+        <Route path="/faq"      element={<Faqs/>} />
         <Route path="/404" element={<PageNotFound/>} />
       </Routes>
     </>

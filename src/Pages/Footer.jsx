@@ -195,17 +195,17 @@ export default function Footer() {
             <h3 className="uppercase tracking-widest text-black mb-4 text-sm">Help Center</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/terms" className="hover:text-black transition">
+                <a href="/contact" className="hover:text-black transition">
                   Terms
                 </a>
               </li>
               <li>
-                <a href="/privacy" className="hover:text-black transition">
+                <a href="/contact" className="hover:text-black transition">
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="/support" className="hover:text-black transition">
+                <a href="/contact" className="hover:text-black transition">
                   Support
                 </a>
               </li>
@@ -218,17 +218,17 @@ export default function Footer() {
 
             <ul className="space-y-2">
               <li>
-                <a href="/services/instagram" className="hover:text-black transition">
+                <a href="/services" className="hover:text-black transition">
                   Instagram Management
                 </a>
               </li>
               <li>
-                <a href="/services/linkedin" className="hover:text-black transition">
+                <a href="/services" className="hover:text-black transition">
                   LinkedIn Content Writing
                 </a>
               </li>
               <li>
-                <a href="/services/branding" className="hover:text-black transition">
+                <a href="/services" className="hover:text-black transition">
                   Personal Branding
                 </a>
               </li>
@@ -236,22 +236,22 @@ export default function Footer() {
               {/* Hidden extra services (animated) */}
               <div ref={moreRef} className="mt-2">
                 <li>
-                  <a href="/services/reels" className="hover:text-black transition">
+                  <a href="/services" className="hover:text-black transition">
                     Reels & Video Editing
                   </a>
                 </li>
                 <li>
-                  <a href="/services/carousel" className="hover:text-black transition">
+                  <a href="/services" className="hover:text-black transition">
                     Carousel Design
                   </a>
                 </li>
                 <li>
-                  <a href="/services/strategy" className="hover:text-black transition">
+                  <a href="/services" className="hover:text-black transition">
                     Social Media Strategy
                   </a>
                 </li>
                 <li>
-                  <a href="/services/optimization" className="hover:text-black transition">
+                  <a href="/services" className="hover:text-black transition">
                     Profile Optimization
                   </a>
                 </li>
