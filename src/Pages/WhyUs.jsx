@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
                       "url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=800&q=80')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    filter: "saturate(0.9) contrast(0.95)",
+                    filter: "saturate(0.9) contrast(0.95) ",
                   }}
                 />
                 {/* Top glossy highlight */}

@@ -46,7 +46,7 @@ export default function ContactUsSection() {
               whileHover={{
                 rotateX: 12,
                 rotateY: -12,
-                scale: 1.05,
+                scale: 1.5,
                 transition: { duration: 0.3 }
               }}
               initial={{ opacity: 0, y: 40 }}

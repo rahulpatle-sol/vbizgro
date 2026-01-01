@@ -25,6 +25,7 @@ import ContactUsSection from "./Pages/CtaForm.jsx";
 import ContactUs from "./Pages/Contact.jsx";
 import PageNotFound from "./Pages/404.jsx";
 import FilmstripReel from "./Components/ThreeDslider.jsx";
+import WhyChooseUs from "./Pages/WhyUs.jsx";
 function App() {
   const location = useLocation();
 
@@ -48,7 +49,7 @@ function App() {
           element={
             <>
               <Hero />
-              <WhyUs />
+           <WhyChooseUs/>
               <Services />
               <ProcessSection />
               <AboutUs />

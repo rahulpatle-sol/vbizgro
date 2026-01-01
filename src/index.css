@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+/*  tailwind css imported  */
 @font-face {
     font-family: EXO;
     src: url('./assets/fonts/Exo-Bold.otf') format('opentype');
