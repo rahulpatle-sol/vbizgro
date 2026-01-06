@@ -256,12 +256,12 @@ Every detail is intentional. Every decision is strategic. Every outcome is craft
                   </p>
 
                   <div className="flex items-center gap-4">
-                    <a
+                    {/* <a
                       href="/work"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/70 bg-gradient-to-r from-white to-indigo-50 text-slate-900 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(99,102,241,0.12)] transition"
                     >
                       Deep Dive →
-                    </a>
+                    </a> */}
                <a href="https://wa.me/919752505639?text=Hi%20I%20want%20to%20start%20a%20project%20with%20VbizGro"
   target="_blank"
   rel="noopener noreferrer"
